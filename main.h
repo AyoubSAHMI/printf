@@ -8,6 +8,6 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+int printNumberWithPutchar(int number);
 
 #endif /*MAIN_H*/

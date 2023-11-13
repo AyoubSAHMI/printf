@@ -41,6 +41,13 @@ write(1, str, strlen(str));
 length += (strlen(str) - 1);
 i++;
 }
+if (format[i + 1] == 'd' || format[i + 1] == 'i')
+{
+decimal = va_arg(l, int);
+count_number = printNumberWithPutchar(decimal);
+length += count_number;
+i++;
+}
 }
 else
 _putchar(format[i]);
