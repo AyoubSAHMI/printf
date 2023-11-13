@@ -32,8 +32,8 @@ i++;
 if (format[i + 1] == 's')
 {
 str = va_arg(l, char*);
-/*if (str == NULL)*/
-/*str = "";*/
+if
+str = "";
 write(1, str, strlen(str));
 length += (strlen(str) - 1);
 i++;
