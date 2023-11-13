@@ -5,57 +5,62 @@
  * Return: an int number of characters printed
  * On error, -1 is returned, and errno is set appropriately.
  */
+#include "main.h"
+
 int _printf(const char *format, ...)
 {
-	int count;
-	va_list args;
+	int char_print, str_length;
+	char c;
+	char *str;
+	va_list l;
 
-	va_start(args, format);
+	str_length = 0;
 
-	count = 0;
-
-	while (*format != '\0')
+	if (format == NULL)
 	{
-		if (*format == '%')
-		{
-			format++;
-			switch (*format)
-			{
-			case 'c':
-				putchar(va_arg(args, int));
-				count++;
-				break;
-			case 's':
-			{
-				const char *str = va_arg(args, const char *);
+		return (-1);
+	}
 
-				while (*str != '\0')
-				{
-					putchar(*str);
-					count++;
-					str++;
-				}
-			}
-			break;
-			case '%':
-				putchar('%');
-				count++;
-				break;
-			case '\0':
-				break;
-			default:
-				putchar('%');
-				count++;
-				break;
-			}
+	va_start(l, format);
+
+	while (*format)
+	{
+		if (*format != '%')
+		{
+			write(1, format, 1);
+			char_print++;
 		}
 		else
 		{
-			putchar(*format);
-			count++;
+			format++;
+			if (*format == '\0')
+			{
+				break;
+			}
+			if (*format == '%')
+			{
+				write(1, format, 1);
+				char_print++;
+			}
+			else if (*format == 'c')
+			{
+				c = va_arg(l, int);
+				write(1, &c, 1);
+				char_print++;
+			}
+			else if (*format == 's')
+			{
+				str = va_arg(l, char*);
+				while (str[str_length] != '\0')
+				{
+					str_length++;
+					write(1, str, str_length);
+					char_print += str_length;
+				}
+			}
 		}
 		format++;
 	}
-	va_end(args);
-	return (count);
+	va_end(l);
+	return (char_print);
 }
