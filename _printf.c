@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _printf - a function that prints everything
  * @format: the string to print
@@ -7,45 +8,51 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	char *str;
-	int length;
-	va_list l;
+	va_list args;
+	va_start(args, format);
 
-	i = 0;
-	length = 0;
+	int count = 0;
 
-	va_start(l, format);
-
-	if (format == NULL)
-		return (-1);
-	while (format[i] != '\0')
+	while (*format != '\0')
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			if (format[i + 1] == 'c')
+			format++;
+			switch (*format)
 			{
-				_putchar(va_arg(l, int));
-				i++;
+			case 'c':
+				putchar(va_arg(args, int));
+				count++;
+				break;
+			case 's':
+			{
+				const char *str = va_arg(args, const char *);
+
+				while (*str != '\0')
+				{
+					putchar(*str);
+					count++;
+					str++;
+				}
 			}
-			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				i++;
-			}
-			if (format[i + 1] == 's')
-			{
-				str = va_arg(l, char*);
-				write(1, str, strlen(str));
-				length += (strlen(str) - 1);
-				i++;
+			break;
+			case '%':
+				putchar('%');
+				count++;
+				break;
+			default:
+				putchar('%');
+				count++;
+				break;
 			}
 		}
 		else
-		_putchar(format[i]);
-		length++;
-		i++;
+		{
+			putchar(*format);
+			count++;
+		}
+		format++;
 	}
-	va_end(l);
-	return (length);
+	va_end(args);
+	return (count);
 }
