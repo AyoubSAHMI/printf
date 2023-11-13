@@ -37,11 +37,8 @@ if (str == NULL)
 write(1, "null", strlen("null"));
 length += (strlen("null"));
 }
-else
-{
 write(1, str, strlen(str));
 length += (strlen(str) - 1);
-}
 i++;
 }
 }
