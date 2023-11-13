@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_printf - copy content to output
+ *_printf - Print formatted output
  *@format: first string.
  *Return: length of printed content
  */
