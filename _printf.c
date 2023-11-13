@@ -34,8 +34,8 @@ if (format[i + 1] == 's')
 str = va_arg(l, char*);
 if (str == NULL)
 {
-write(1, "(null)", strlen("(null)"));
-length += (strlen("(null)"));
+write(1, str, 1);
+length += 1;
 }
 write(1, str, strlen(str));
 length += (strlen(str) - 1);
