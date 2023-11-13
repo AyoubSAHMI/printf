@@ -7,6 +7,7 @@
 int _printf(const char *format, ...)
 {
 int i, length;
+int decimal, count_number;
 char *str;
 va_list l;
 i = length = 0;
