@@ -24,10 +24,7 @@ int Sprintf(char *str)
     i = 0;
     if (str == NULL)
       {
-	while (null[i] != '\0')
-	  _putchar(null[i]);
-	i++;
-	charCount += 6;
+        return (-1);
       }
     write(1, str, strlen(str));                             
     charCount += (strlen(str) - 1);
