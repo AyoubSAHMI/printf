@@ -100,3 +100,35 @@ int printNumberWithPutchar(int number)
 	}
 	return (final_count);
 }
+/**
+ *binprint - a function that print a number in binary
+ *@num: the number we'll convert in binary
+ *Return: number of printed digits
+ */
+int binprint(unsigned int num)
+{
+	int i = 0;
+	int j;
+	int ptr[64];
+	if (num == 0)
+	{
+		_putchar(0 + '0');
+		return(1);
+	}
+	else
+	{
+		while (num >= 1)
+		{
+
+			ptr[i] = (num % 2);
+			num = num / 2;
+			i++;
+		}
+
+		for (j = i - 1; j >= 0 ;j--)
+		{
+			_putchar(ptr[j] + '0');
+		}
+	}
+	return (i);
+}
