@@ -41,6 +41,11 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				str = va_arg(l, char*);
+				if (str == NULL)
+				{
+					write(1, "(null)", strlen("(null)"));
+					length += strlen("(null)");
+				}
 				while (str[str_len] != '\0')
 				{
 					str_len++;
@@ -50,8 +55,15 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == '%')
 			{
+				if (((*format) + 1) == '\0')
+				{
+					return (-1);
+				}
+				else
+				{
 				write(1, format, 1);
 				length++;
+				}
 			}
 		}
 		format++;
