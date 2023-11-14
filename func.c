@@ -11,7 +11,19 @@ int _putchar(char c)
 return (write(1, &c, 1));
 }
 /*Adding new functions*/
-
+/**
+ * Sprintf - print caracter string
+ * @str: pointer to string
+ * Return: length of string
+ */
+int Sprintf(char *str)
+{
+    int charCount;
+    charCount = 0;                            
+    write(1, str, strlen(str));                             
+    charCount += (strlen(str) - 1);
+    return (charCount);
+}
 /**
 *printNumberWithPutchar - A function that prints
 *the digits of a number
