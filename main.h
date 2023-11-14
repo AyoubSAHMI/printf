@@ -11,5 +11,5 @@ int _putchar(char c);
 int printNumberWithPutchar(int number);
 int Sprintf(char *str);
 int str_length(char *s);
-
+int binprint(unsigned int num);
 #endif
