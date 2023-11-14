@@ -20,8 +20,8 @@ int Sprintf(char *str)
 {
   int charCount;
    charCount = 0;
-   if (str == NULL)
-     return (-1);
+   if (!str && *str == '0')
+     str = "";
    else
      {
        write(1, str, strlen(str));                             
