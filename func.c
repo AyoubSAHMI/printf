@@ -22,9 +22,10 @@ int Sprintf(char *str)
    charCount = 0;
    if (str == NULL)
       {
-        return (-1);
+        
+	return (0);
       }
-    else
+    
      write(1, str, strlen(str));                             
     charCount += (strlen(str) - 1);
     return (charCount);
