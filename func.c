@@ -59,18 +59,16 @@ int printNumberWithPutchar(int number)
 	int i, divisor;
 	int temp, digitCount;
         int digit, final_count;
-	/**
-	   Handle the case when the number is zero separately*/
+	/*Handle the case when the number is zero separately*/
 	if (number == 0)
 	{
 		_putchar('0');
 		return(1);
 	}
 	/**
-If the number is negative,
+	 *If the number is negative,
 	*/
-	/**
-	   print the minus sign and make it positive*/
+	/* print the minus sign and make it positive*/
 	if (number < 0)
 	{
 		_putchar('-');
