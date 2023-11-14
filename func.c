@@ -10,7 +10,8 @@ int _putchar(char c)
 {
 return (write(1, &c, 1));
 }
-/*Adding new functions*/
+/**
+Adding new functions*/
 /**
  * Sprintf - print caracter string
  * @str: pointer to string
@@ -22,8 +23,7 @@ int Sprintf(char *str)
    charCount = 0;
    if (!str && *str == '0')
      str = "";
-  
-       write(1, str, strlen(str));                             
+       write(1, str, strlen(str));
     charCount += (strlen(str) - 1);
     return (charCount);
 }
@@ -39,19 +39,24 @@ int printNumberWithPutchar(int number)
 int i, divisor;
 int temp, digitCount;
 int digit, final_count;
-/* Handle the case when the number is zero separately*/
+/**
+ Handle the case when the number is zero separately*/
 if (number == 0)
 {
 _putchar('0');
 }
-/*If the number is negative,*/
-/* print the minus sign and make it positive*/
+/**
+If the number is negative,
+*/
+/**
+ print the minus sign and make it positive*/
 if (number < 0)
 {
 _putchar('-');
 number = -number;
 }
-/* Determine the number of digits*/
+/**
+ Determine the number of digits*/
 temp = number;
 digitCount = 0;
 while (temp != 0)
@@ -60,7 +65,8 @@ temp /= 10;
 ++digitCount;
 }
 final_count = digitCount;
-/* Extract each digit and print it*/
+/**
+ Extract each digit and print it*/
 while (digitCount > 0)
 {
 divisor = 1;

@@ -11,4 +11,4 @@ int _putchar(char c);
 int printNumberWithPutchar(int number);
 int Sprintf(char *str);
 
-#endif /*MAIN_H*/
+#endif
