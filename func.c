@@ -22,12 +22,10 @@ int Sprintf(char *str)
    charCount = 0;
    if (!str && *str == '0')
      str = "";
-   else
-     {
+  
        write(1, str, strlen(str));                             
     charCount += (strlen(str) - 1);
     return (charCount);
-}
 }
 /**
 *printNumberWithPutchar - A function that prints
