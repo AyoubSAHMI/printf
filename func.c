@@ -19,14 +19,13 @@ return (write(1, &c, 1));
 int Sprintf(char *str)
 {
   int charCount, i;
-    char null[]="(null)";
-    charCount = 0;
-    i = 0;
-    if (str == NULL)
+   charCount = 0;
+   if (str == NULL)
       {
         return (-1);
       }
-    write(1, str, strlen(str));                             
+    else
+     write(1, str, strlen(str));                             
     charCount += (strlen(str) - 1);
     return (charCount);
 }
