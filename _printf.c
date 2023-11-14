@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 /**
 *_printf - Print formatted output
 *@format: first string.
@@ -45,14 +44,9 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 			{
 				decimal = va_arg(l, int);
-				if(decimal >= INT_MIN && decimal <= INT_MAX)
-				  {
 				count_number = printNumberWithPutchar(decimal);
 				length += (count_number - 1);
-				  }
-				else
-				  return (-1);
-				i++;
+			        i++;
 			}
 			else
 			{
