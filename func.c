@@ -26,6 +26,7 @@ int Sprintf(char *str)
        write(1, str, strlen(str));
     charCount += (strlen(str) - 1);
     return (charCount);
+     }
     else
       {
 	_putchar('(');
