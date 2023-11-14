@@ -37,6 +37,11 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 's')
 			{
 				str = va_arg(l, char*);
+				if (str == NULL)
+				{
+					write(1, "(null)", strlen("(null)"));
+					length += strlen("(null)");
+				}
 				string_length = Sprintf(str);
 				length += string_length;
 				i++;
