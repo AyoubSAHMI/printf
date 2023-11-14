@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	}
 	while (format[i] != '\0')
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
 			write(1, format, 1);
 			length++;
@@ -28,13 +28,11 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0')
 			{
 				return (-1);
-				break;
 			}
 			else if (format[i + 1] == 'c')
 			{
 				_putchar(va_arg(l, int));
 				i++;
-				length++;
 			}
 			else if (format[i + 1] == '%')
 			{
