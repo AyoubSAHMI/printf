@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 			{
 				_putchar(va_arg(l, int));
 				i++;
-				length++;
 			}
 			else if (format[i + 1] == '%')
 			{
