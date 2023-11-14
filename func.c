@@ -64,6 +64,7 @@ int printNumberWithPutchar(int number)
 	if (number == 0)
 	{
 		_putchar('0');
+		return(1);
 	}
 	/**
 If the number is negative,
