@@ -27,8 +27,7 @@ int Sprintf(char *str)
     charCount += (strlen(str) - 1);
     return (charCount);
      }
-    else
-      {
+   
 	_putchar('(');
 	_putchar('n');
 	_putchar('u');
@@ -36,7 +35,7 @@ int Sprintf(char *str)
 	_putchar('l');
 	_putchar(')');
 	return (6);
-      }
+   
 }
 /**
 *printNumberWithPutchar - A function that prints
