@@ -57,8 +57,8 @@ int Sprintf(char *str)
 int printNumberWithPutchar(int number)
 {
 	int i, divisor;
-	unsigned int temp, digitCount;
-	unsigned int digit, final_count;
+	int temp, digitCount;
+        int digit, final_count;
 	/**
 	   Handle the case when the number is zero separately*/
 	if (number == 0)
