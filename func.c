@@ -37,6 +37,7 @@ int Sprintf(char *str)
 {
   int charCount;
    charCount = 0;
+<<<<<<< HEAD
    if (str == NULL)
    {
 	   str = "";
@@ -45,7 +46,15 @@ int Sprintf(char *str)
    }
        write(1, str,str_length(str));
     charCount += (str_length(str) - 1);
+=======
+   if(str == NULL)
+     str = "(null)";
+       write(1, str, strlen(str));
+    charCount += (strlen(str) - 1);
+>>>>>>> 4cc6fa9d2bc98571b539a616cfef019c7f26dcf7
     return (charCount);
+
+   
 }
 /**
 *printNumberWithPutchar - A function that prints
