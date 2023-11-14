@@ -40,7 +40,7 @@ while (format[i] != '\0')
                 {                                                                                    
                                 decimal = va_arg(l, int);                       
                                         count_number = printNumberWithPutchar(decimal);        
-                                        length += count_number;                 
+                                        length += (count_number - 1);                 
                                  i++;                                              
                         }                                                       
         }                                                               
