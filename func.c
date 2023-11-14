@@ -21,7 +21,7 @@ int Sprintf(char *str)
   int charCount;
    charCount = 0;
    if (str == NULL)
-     exit(1);
+     return (-1);
    else
      {
        write(1, str, strlen(str));                             
