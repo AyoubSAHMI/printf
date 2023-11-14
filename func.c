@@ -115,13 +115,12 @@ int binprint(unsigned int num)
 		_putchar(0 + '0');
 		return(1);
 	}
-	else
-	{
+	
 		while (num >= 1)
 		{
 
 			ptr[i] = (num % 2);
-			num = num / 2;
+			num = (num / 2);
 			i++;
 		}
 
@@ -129,6 +128,6 @@ int binprint(unsigned int num)
 		{
 			_putchar(ptr[j] + '0');
 		}
-	}
+	
 	return (i);
 }

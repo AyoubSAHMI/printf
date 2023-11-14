@@ -6,8 +6,9 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, length, decimal, count_number, string_length;
+  int i, length, decimal, count_number, string_length, binCount;
 	unsigned int bin;
+	
 	char *str;
 	char *error;
 	va_list l;
@@ -52,7 +53,9 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 'b')
 			{
 				bin = va_arg(l, unsigned int);
-				length += binprint(bin);
+			        binCount = binprint(bin);
+				length += (binCount - 1);
+				i++;
 			}
 			else
 			{
