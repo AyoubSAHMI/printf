@@ -18,11 +18,6 @@ int _printf(const char *format, ...)
 	}
 	while (format[i] != '\0')
 	{
-		if (format[i] != '%')
-		{
-			write(1, format, 1);
-			length++;
-		}
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
