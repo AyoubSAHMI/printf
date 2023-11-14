@@ -18,8 +18,17 @@ return (write(1, &c, 1));
  */
 int Sprintf(char *str)
 {
-    int charCount;
-    charCount = 0;                            
+  int charCount, i;
+    char null[]="(null)";
+    charCount = 0;
+    i = 0;
+    if (str == NULL)
+      {
+	while (null[i] != '\0')
+	  _putchar(null[i]);
+	i++;
+	charCount += 6;
+      }
     write(1, str, strlen(str));                             
     charCount += (strlen(str) - 1);
     return (charCount);
