@@ -8,7 +8,7 @@
  */
 int _putchar(char c)
 {
-return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 /**
  *_strlen - a function that returns a int
@@ -27,7 +27,7 @@ int str_length(char *s)
 	return (i);
 }
 /**
-Adding new functions*/
+   Adding new functions*/
 /**
  * Sprintf - print caracter string
  * @str: pointer to string
@@ -35,78 +35,69 @@ Adding new functions*/
  */
 int Sprintf(char *str)
 {
-  int charCount;
-   charCount = 0;
-<<<<<<< HEAD
-   if (str == NULL)
-   {
-	   str = "";
-	   write(1, str, 1);
-	   return (-1);
-   }
-       write(1, str,str_length(str));
-    charCount += (str_length(str) - 1);
-=======
-   if(str == NULL)
-     str = "(null)";
-       write(1, str, strlen(str));
-    charCount += (strlen(str) - 1);
->>>>>>> 4cc6fa9d2bc98571b539a616cfef019c7f26dcf7
-    return (charCount);
-
-   
+	int charCount;
+	charCount = 0;
+	if (str == NULL)
+	{
+		str = "";
+		write(1, str, 1);
+		return (-1);
+	}
+	write(1, str,str_length(str));
+	charCount += (str_length(str) - 1);
+	return (charCount);
 }
 /**
-*printNumberWithPutchar - A function that prints
-*the digits of a number
-*@number: the number we will count digits of
-*Return: number of characters printed
-*/
+ *printNumberWithPutchar - A function that prints
+ *the digits of a number
+ *@number: the number we will count digits of
+ *Return: number of characters printed
+ */
 
 int printNumberWithPutchar(int number)
 {
-int i, divisor;
-int temp, digitCount;
-int digit, final_count;
-/**
- Handle the case when the number is zero separately*/
-if (number == 0)
-{
-_putchar('0');
-}
-/**
+	int i, divisor;
+	int temp, digitCount;
+	int digit, final_count;
+	/**
+	   Handle the case when the number is zero separately*/
+	if (number == 0)
+	{
+		_putchar('0');
+	}
+	/**
 If the number is negative,
-*/
-/**
- print the minus sign and make it positive*/
-if (number < 0)
-{
-_putchar('-');
-number = -number;
-}
-/**
- Determine the number of digits*/
-temp = number;
-digitCount = 0;
-while (temp != 0)
-{
-temp /= 10;
-++digitCount;
-}
-final_count = digitCount;
-/**
- Extract each digit and print it*/
-while (digitCount > 0)
-{
-divisor = 1;
-for (i = 1; i < digitCount; ++i)
-{
-divisor *= 10;
-}
-digit = number / divisor;
-_putchar('0' + digit);
-number %= divisor;
---digitCount;
-}
-return (final_count);
+	*/
+	/**
+	   print the minus sign and make it positive*/
+	if (number < 0)
+	{
+		_putchar('-');
+		number = -number;
+	}
+	/**
+	   Determine the number of digits*/
+	temp = number;
+	digitCount = 0;
+	while (temp != 0)
+	{
+		temp /= 10;
+		++digitCount;
+	}
+	final_count = digitCount;
+	/**
+	   Extract each digit and print it*/
+	while (digitCount > 0)
+	{
+		divisor = 1;
+		for (i = 1; i < digitCount; ++i)
+		{
+			divisor *= 10;
+		}
+		digit = number / divisor;
+		_putchar('0' + digit);
+		number %= divisor;
+		--digitCount;
+	}
+	return (final_count);
 }
