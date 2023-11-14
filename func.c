@@ -11,6 +11,22 @@ int _putchar(char c)
 return (write(1, &c, 1));
 }
 /**
+ *_strlen - a function that returns a int
+ *@s: the string we'll count its characters
+ *Return: number of characters
+ */
+int str_length(char *s)
+{
+	int i;
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+/**
 Adding new functions*/
 /**
  * Sprintf - print caracter string
@@ -22,9 +38,13 @@ int Sprintf(char *str)
   int charCount;
    charCount = 0;
    if (str == NULL)
-	   str = "(null)";
-       write(1, str, strlen(str));
-    charCount += (strlen(str) - 1);
+   {
+	   str = "";
+	   write(1, str, 1);
+	   return (-1);
+   }
+       write(1, str,str_length(str));
+    charCount += (str_length(str) - 1);
     return (charCount);
 }
 /**

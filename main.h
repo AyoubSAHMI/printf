@@ -10,5 +10,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int printNumberWithPutchar(int number);
 int Sprintf(char *str);
+int str_length(char *s);
 
 #endif
