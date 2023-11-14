@@ -12,10 +12,13 @@ int _printf(const char *format, ...)
     int count = 0; // to count the number of characters printed
     char c;
 
-    while (*format) {
-        if (*format == '%' && *(format + 1) != '\0') {
+    while (*format)
+      {
+        if (*format == '%' && *(format + 1) != '\0')
+	  {
             format++; // move past '%'
-            switch (*format) {
+            switch (*format)
+	      {
                 case 'c':
                     c = (char) va_arg(args, int);
                     _putchar(c);
@@ -41,7 +44,9 @@ int _printf(const char *format, ...)
                     count += 2;
                     break;
             }
-        } else {
+        }
+	else
+	  {
             _putchar(*format);
             count++;
         }
@@ -51,5 +56,5 @@ int _printf(const char *format, ...)
 
     va_end(args);
 
-    return count;
+    return (count);
 }
