@@ -21,8 +21,8 @@ int Sprintf(char *str)
 {
   int charCount;
    charCount = 0;
-   if (!str && *str == '0')
-     str = "";
+   if (!str && *str == '\0')
+	   str = "(null)";
        write(1, str, strlen(str));
     charCount += (strlen(str) - 1);
     return (charCount);
